@@ -41,3 +41,16 @@ tensor([[3, 8],
 ```python
 #d loss_fn / d w = (d loss_fn / d t_p) * (d t_p / d w)
 ```
+
+## Use neural network to fit the data
+- curve is caused by activation function, such as nn.Tanh()
+- neural network has a tendency to overfit.
+- optim.SGD: Stochastic Gradient Descent(随机梯度下降) 为了批量优化
+
+tips:
+how to control the color of matplotlib
+```python
+plt.plot(t_u.numpy(), t_c.numpy(), 'o', color='red')
+plt.plot(t_range.numpy(), seq_model(0.1 * t_range).detach().numpy(), 'c-')
+plt.plot(t_u.numpy(), seq_model(0.1 * t_u).detach().numpy(), 'kx')
+```
