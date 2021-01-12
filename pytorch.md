@@ -6,6 +6,23 @@ Today read Chapter 5. Have learned the mechanics of learning.
 ## basic torch operation
 - \* / mul 对应位的元素直接乘（broadcast参看boradcast的说明）
 - mm / matmul 矩阵乘
+- unsqueeze(input, dim) 
+        
+        在dim处插入一维 [1,2,3,4], dim=0 => [[1,2,3,4]]; dim=1 =>[[1],[2],[3],[4]]
+        src shape是(4), dim=0时，shape为(1，4); dim=1时，shape为(4,1)
+- view(*shape)
+
+        参数中-1表示根据其它维数，算出剩余的维数。比如：
+        
+```python
+        x = torch.randn(4,4)
+        torch.Size([4,4])
+        y = x.view(-1,2)
+        torch.Size([8,2])
+        z = x.view(-1)
+        torch.Size([16])
+```
+
 - concat
 - stack
 
