@@ -71,3 +71,15 @@ plt.plot(t_u.numpy(), t_c.numpy(), 'o', color='red')
 plt.plot(t_range.numpy(), seq_model(0.1 * t_range).detach().numpy(), 'c-')
 plt.plot(t_u.numpy(), seq_model(0.1 * t_u).detach().numpy(), 'kx')
 ```
+
+## Learning from images
+nn.CrossEntropyLoss 等于 nn.LogSoftmax和nn.NLLLoss的组合
+用DataLoader每个epoch训练一小批样本
+在GPU上训练时:
+1. 把从dataloader中得到的tensor传入GPU(nn.tensor.to) 
+2. 把参数传入GPU（nn.Module.to)
+
+全连接模型的局限性：
+- 没有平移不变性
+- 消耗算力过多
+
