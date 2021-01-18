@@ -1,7 +1,7 @@
 Learning torch
 ==============
 
-Today read Chapter 5. Have learned the mechanics of learning.
+Today read Chapter 7. Have learned full connected network.
 
 ## basic torch operation
 - \* / mul 对应位的元素直接乘（broadcast参看boradcast的说明）
@@ -75,11 +75,18 @@ plt.plot(t_u.numpy(), seq_model(0.1 * t_u).detach().numpy(), 'kx')
 ## Learning from images
 nn.CrossEntropyLoss 等于 nn.LogSoftmax和nn.NLLLoss的组合
 用DataLoader每个epoch训练一小批样本
-在GPU上训练时:
-1. 把从dataloader中得到的tensor传入GPU(nn.tensor.to) 
-2. 把参数传入GPU（nn.Module.to)
+
 
 全连接模型的局限性：
 - 没有平移不变性
 - 消耗算力过多
+
+## Using convolutions to generalize
+- 保存和加载模型
+- 在GPU上训练时:
+     - 把从dataloader中得到的tensor传入GPU(nn.tensor.to) 
+     - 把参数传入GPU（nn.Module.to)
+        
+- 模型设计
+
 
