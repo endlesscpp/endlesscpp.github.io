@@ -26,18 +26,21 @@ Today read Chapter 7. Have learned full connected network.
 - concat
 - stack
 
-```python
-x1 = torch.ones(3, 4)
-x2 = torch.ones(3, 4)
-print(x1)
-ans = torch.stack([x1, x2], dim=1)
-print(ans.shape)
-```
+        ```python
+        x1 = torch.ones(3, 4)
+        x2 = torch.ones(3, 4)
+        print(x1)
+        ans = torch.stack([x1, x2], dim=1)
+        print(ans.shape)
+        ```
 
-ans
-- dim == 0: [2,3,4]
-- dim == 1: [3,2,4]
-- dim == 2: [3,4,2]
+        ans
+        - dim == 0: [2,3,4]
+        - dim == 1: [3,2,4]
+        - dim == 2: [3,4,2]
+
+- numel
+   - How many elements in each tensor instance
 
 ### broadcast
 1. 如果某一个维度size==1（假设值为a），另一个tensor中该维度所有元素都乘以这个值a
@@ -82,6 +85,11 @@ nn.CrossEntropyLoss 等于 nn.LogSoftmax和nn.NLLLoss的组合
 - 消耗算力过多
 
 ## Using convolutions to generalize
+- conv weight tensor:
+    - out_ch * in_ch * kernel_width * kernel_height
+- conv:
+    一个输入channel个数（比如RGB），一个输出channel个数
+- subclass nn.Module
 - 保存和加载模型
 - 在GPU上训练时:
      - 把从dataloader中得到的tensor传入GPU(nn.tensor.to) 
