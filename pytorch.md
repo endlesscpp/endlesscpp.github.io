@@ -90,6 +90,10 @@ nn.CrossEntropyLoss 等于 nn.LogSoftmax和nn.NLLLoss的组合
 - conv:
     一个输入channel个数（比如RGB），一个输出channel个数
 - subclass nn.Module
+- functional API
+    - torch.tanh
+    - nn.functional.max_pool2d
+- 模型是状态的容器，以Parameters,submodules和instructions一起做forward.
 - 保存和加载模型
 - 在GPU上训练时:
      - 把从dataloader中得到的tensor传入GPU(nn.tensor.to) 
