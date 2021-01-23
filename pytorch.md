@@ -98,7 +98,18 @@ nn.CrossEntropyLoss 等于 nn.LogSoftmax和nn.NLLLoss的组合
 - 在GPU上训练时:
      - 把从dataloader中得到的tensor传入GPU(nn.tensor.to) 
      - 把参数传入GPU（nn.Module.to)
-        
-- 模型设计
+    
+- add memory capacity: width
+- 模型规范化：
+    - weight penality(权重惩罚）: L2 regularization(weight decay): 权重衰减
+    - dropout: 不依赖太多单一输入
+    - batch normalization (需要重看）
+    
+- depth:
+    - 浅的网络能识别人的形状
+    - 深的网络能识别脸上的嘴巴
+    
+- residual network
+    - 做了一个skip connection（短路连接）
 
 
